@@ -1,11 +1,10 @@
 {
-  "name": "z-scroll-to",
+  "name": "zzq-component",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name flock ./src/components/index.js",
+    "build-bundle": "vue-cli-service build --target lib --name z-component ./src/components/index.js",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
     "e2e:open": "vue-cli-service e2e:open",
@@ -21,6 +20,8 @@
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0-0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.17"
   },
   "eslintConfig": {
@@ -47,12 +48,15 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "./dist/flock.common.js",
+  "main": "./dist/z-component.common.js",
   "files": [
     "dist/*",
     "src/*",
     "public/*",
     "*.json",
     "*.js"
-  ]
+  ],
+  "publishConfig": {
+    "access": "public"
+  }
 }
