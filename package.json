@@ -1,16 +1,23 @@
 {
   "name": "zzq-component",
-  "version": "0.1.0",
+  "author": "hengwujun",
+  "license": "ISC",
+  "keywords": [
+    "vue",
+    "components"
+  ],
+  "version": "0.1.2",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "build-bundle": "vue-cli-service build --target lib --name z-component ./src/components/index.js",
+    "build-bundle": "vue-cli-service build --target lib --name zzq ./src/components/index.js",
     "test": "vue-cli-service test",
     "e2e": "vue-cli-service e2e",
     "e2e:open": "vue-cli-service e2e:open",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "lodash": "^4.17.11",
     "vue": "^2.5.17"
   },
   "devDependencies": {
@@ -48,15 +55,12 @@
     "last 2 versions",
     "not ie <= 8"
   ],
-  "main": "./dist/z-component.common.js",
+  "main": "./dist/zzq.common.js",
   "files": [
     "dist/*",
     "src/*",
     "public/*",
     "*.json",
     "*.js"
-  ],
-  "publishConfig": {
-    "access": "public"
-  }
+  ]
 }
