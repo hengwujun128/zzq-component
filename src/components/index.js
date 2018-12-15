@@ -14,5 +14,5 @@ Object.keys(Components).forEach(name => {
   Vue.component(name, Components[name])
 })
 
-
+// register scopded in component
 export default Components
