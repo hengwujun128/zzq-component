@@ -1,4 +1,4 @@
-# z-scroll-to
+# zzq-component
 
 ## Project setup
 
