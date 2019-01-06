@@ -29,7 +29,7 @@
       <li>
         <button
           :class="{active:active===3}"
-          v-zscroll="'#target3'"
+          v-zsscroll="'#target3'"
           @click="clickHandler(3)"
         >scrollTo3</button>
       </li>
@@ -282,7 +282,7 @@
 
 <script>
 export default {
-  data() {
+  data () {
     let me = this;
     return {
       active: 1,
@@ -294,15 +294,15 @@ export default {
         easing: "linear",
         offset: -10, //The offset that should be applied when scrolling. This option accepts a callback function since v2.8.0,
         cancelable: true,
-        onStart: function(element) {
+        onStart: function (element) {
           // scrolling started
           // alert('start')
         },
-        onDone: function(element) {
+        onDone: function (element) {
           // scrolling is done
           // alert('done')
         },
-        onCancel: function() {
+        onCancel: function () {
           // scrolling has been interrupted
         },
         x: false,
@@ -316,15 +316,15 @@ export default {
         easing: "linear",
         offset: -10, //The offset that should be applied when scrolling. This option accepts a callback function since v2.8.0,
         cancelable: true,
-        onStart: function(element) {
+        onStart: function (element) {
           // scrolling started
           // alert('start')
         },
-        onDone: function(element) {
+        onDone: function (element) {
           // scrolling is done
           // alert('done')
         },
-        onCancel: function() {
+        onCancel: function () {
           // scrolling has been interrupted
         },
         x: false,
@@ -338,18 +338,18 @@ export default {
         easing: "linear",
         offset: -10, //The offset that should be applied when scrolling. This option accepts a callback function since v2.8.0,
         cancelable: true,
-        onStart: function(element) {
+        onStart: function (element) {
           // scrolling started
           // alert('start')
         },
-        onDone: function(element) {
+        onDone: function (element) {
           // scrolling is done
           // alert('done')
           // me.$nextTick(function () {
           //   me.active = 3
           // })
         },
-        onCancel: function() {
+        onCancel: function () {
           // scrolling has been interrupted
         },
         x: false,
@@ -357,7 +357,7 @@ export default {
       }
     };
   },
-  mounted() {
+  mounted () {
     let target1 = this.cumulativeOffset(document.querySelector("#target1"));
     let target2 = this.cumulativeOffset(document.querySelector("#target2"));
     let target3 = this.cumulativeOffset(document.querySelector("#target3"));
@@ -370,7 +370,7 @@ export default {
     var last_known_scroll_position = 0;
     var ticking = false;
     var me = this;
-    function doSomething(scroll_pos) {
+    function doSomething (scroll_pos) {
       // do something with the scroll position
       // console.log('定时获取位置' + scroll_pos)
       // 10 代表偏移量,滚动指令滚动到目标位置时候-10，此时要加上
@@ -384,7 +384,7 @@ export default {
       }
     }
     //
-    window.addEventListener("scroll", function(e) {
+    window.addEventListener("scroll", function (e) {
       // 1.在事件处理程序中要实时获取滚动位置
       last_known_scroll_position = window.scrollY;
       last_known_scroll_position = document.documentElement.scrollTop;
@@ -392,7 +392,7 @@ export default {
       // 2.在事件处理程序中，通过变量控制添加window.requestAnimationFrame;
       if (!ticking) {
         //
-        window.requestAnimationFrame(function() {
+        window.requestAnimationFrame(function () {
           doSomething(last_known_scroll_position);
           ticking = false;
         });
@@ -402,7 +402,7 @@ export default {
     });
   },
   methods: {
-    cumulativeOffset(element) {
+    cumulativeOffset (element) {
       let top = 0;
       let left = 0;
 
@@ -419,7 +419,7 @@ export default {
         left: left
       };
     },
-    clickHandler(n) {
+    clickHandler (n) {
       // this.active = n
     }
   }
