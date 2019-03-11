@@ -1,3 +1,5 @@
+
+/* eslint-disable */
 <template>
   <div class="scrollTo-container" id="scrollTo-container">
     <h2>Adds a directive that listens for click events and scrolls to elements</h2>
@@ -283,7 +285,7 @@
 <script>
 export default {
   data () {
-    let me = this;
+    let me=this;
     return {
       active: 1,
       options1: {
@@ -294,15 +296,15 @@ export default {
         easing: "linear",
         offset: -10, //The offset that should be applied when scrolling. This option accepts a callback function since v2.8.0,
         cancelable: true,
-        onStart: function (element) {
+        onStart: function(element) {
           // scrolling started
           // alert('start')
         },
-        onDone: function (element) {
+        onDone: function(element) {
           // scrolling is done
           // alert('done')
         },
-        onCancel: function () {
+        onCancel: function() {
           // scrolling has been interrupted
         },
         x: false,
@@ -316,15 +318,15 @@ export default {
         easing: "linear",
         offset: -10, //The offset that should be applied when scrolling. This option accepts a callback function since v2.8.0,
         cancelable: true,
-        onStart: function (element) {
+        onStart: function(element) {
           // scrolling started
           // alert('start')
         },
-        onDone: function (element) {
+        onDone: function(element) {
           // scrolling is done
           // alert('done')
         },
-        onCancel: function () {
+        onCancel: function() {
           // scrolling has been interrupted
         },
         x: false,
@@ -338,18 +340,18 @@ export default {
         easing: "linear",
         offset: -10, //The offset that should be applied when scrolling. This option accepts a callback function since v2.8.0,
         cancelable: true,
-        onStart: function (element) {
+        onStart: function(element) {
           // scrolling started
           // alert('start')
         },
-        onDone: function (element) {
+        onDone: function(element) {
           // scrolling is done
           // alert('done')
           // me.$nextTick(function () {
           //   me.active = 3
           // })
         },
-        onCancel: function () {
+        onCancel: function() {
           // scrolling has been interrupted
         },
         x: false,
@@ -358,61 +360,61 @@ export default {
     };
   },
   mounted () {
-    let target1 = this.cumulativeOffset(document.querySelector("#target1"));
-    let target2 = this.cumulativeOffset(document.querySelector("#target2"));
-    let target3 = this.cumulativeOffset(document.querySelector("#target3"));
+    let target1=this.cumulativeOffset(document.querySelector("#target1"));
+    let target2=this.cumulativeOffset(document.querySelector("#target2"));
+    let target3=this.cumulativeOffset(document.querySelector("#target3"));
 
-    let targetObj1 = getComputedStyle(document.querySelector("#target1"));
-    let targetObj2 = getComputedStyle(document.querySelector("#target2"));
-    let targetObj3 = getComputedStyle(document.querySelector("#target3"));
-    console.log(target1, target2, target3);
-    console.log(targetObj1.height, targetObj2.height, targetObj3.height);
-    var last_known_scroll_position = 0;
-    var ticking = false;
-    var me = this;
+    let targetObj1=getComputedStyle(document.querySelector("#target1"));
+    let targetObj2=getComputedStyle(document.querySelector("#target2"));
+    let targetObj3=getComputedStyle(document.querySelector("#target3"));
+    console.log(target1,target2,target3);
+    console.log(targetObj1.height,targetObj2.height,targetObj3.height);
+    var last_known_scroll_position=0;
+    var ticking=false;
+    var me=this;
     function doSomething (scroll_pos) {
       // do something with the scroll position
       // console.log('定时获取位置' + scroll_pos)
       // 10 代表偏移量,滚动指令滚动到目标位置时候-10，此时要加上
-      if (scroll_pos + 10 < target2.top) {
-        me.active = 1;
-      } else if (scroll_pos + 10 < target3.top) {
-        me.active = 2;
-      } else if (target3.top <= scroll_pos + 10) {
+      if(scroll_pos+10<target2.top) {
+        me.active=1;
+      } else if(scroll_pos+10<target3.top) {
+        me.active=2;
+      } else if(target3.top<=scroll_pos+10) {
         // debugger
-        me.active = 3;
+        me.active=3;
       }
     }
     //
-    window.addEventListener("scroll", function (e) {
+    window.addEventListener("scroll",function(e) {
       // 1.在事件处理程序中要实时获取滚动位置
-      last_known_scroll_position = window.scrollY;
-      last_known_scroll_position = document.documentElement.scrollTop;
+      last_known_scroll_position=window.scrollY;
+      last_known_scroll_position=document.documentElement.scrollTop;
       // console.log('事件处理实时获取位置:' + last_known_scroll_position)
       // 2.在事件处理程序中，通过变量控制添加window.requestAnimationFrame;
-      if (!ticking) {
+      if(!ticking) {
         //
-        window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function() {
           doSomething(last_known_scroll_position);
-          ticking = false;
+          ticking=false;
         });
 
-        ticking = true;
+        ticking=true;
       }
     });
   },
   methods: {
     cumulativeOffset (element) {
-      let top = 0;
-      let left = 0;
+      let top=0;
+      let left=0;
 
       do {
-        top += element.offsetTop || 0;
-        left += element.offsetLeft || 0;
+        top+=element.offsetTop||0;
+        left+=element.offsetLeft||0;
         // 如果有祖先定位元素，就循环累加
 
-        element = element.offsetParent;
-      } while (element);
+        element=element.offsetParent;
+      } while(element);
 
       return {
         top: top,

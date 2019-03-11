@@ -1,0 +1,75 @@
+.entranceFromTop {
+  animation-duration: 2s;
+  animation-name: entranceFromTop;
+}
+
+@keyframes entranceFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entranceFromBottom {
+  animation-duration: 2s;
+  animation-name: entranceFromBottom;
+}
+
+@keyframes entranceFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.entranceFromLeft {
+  animation-name: entranceFromLeft;
+  animation-duration: 1s;
+}
+
+@keyframes entranceFromLeft {
+  from {
+    opacity: 0;
+    transform: translate3d(-100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* 
+1..在一个 class 中添加动画:
+animation-name
+animation-duration
+
+2. 动画主要使用:
+opacity:0:初始状态不可见
+transform: translate3d(100%, 0, 0);初始状态,元素移动自身的的宽度
+
+*/
+.entranceFromRight {
+  animation-name: entranceFromRight;
+  animation-duration: 1s;
+}
+
+@keyframes entranceFromRight {
+  from {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
