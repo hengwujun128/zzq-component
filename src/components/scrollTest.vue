@@ -23,15 +23,15 @@
       <!-- 第二种方式滚动,setTimeout -->
       <li>
         <!-- <button :class="{active:active===1}" v-scroll-to="'#target1'">scrollTo1</button> -->
-        <button :class="{active:active===1}" v-zscroll="'#target1'">scrollTo1</button>
+        <button :class="{active:active===1}" v-ZScroll="'#target1'">scrollTo1</button>
       </li>
       <li>
-        <button :class="{activse:active===2}" v-zscroll="'#target2'">scrollTo2</button>
+        <button :class="{activse:active===2}" v-ZScroll="'#target2'">scrollTo2</button>
       </li>
       <li>
         <button
           :class="{active:active===3}"
-          v-zsscroll="'#target3'"
+          v-ZScroll="'#target3'"
           @click="clickHandler(3)"
         >scrollTo3</button>
       </li>

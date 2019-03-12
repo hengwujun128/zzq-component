@@ -2,7 +2,7 @@
   <div class="hello">
     <h1>{{ msg }}</h1>
     <ZBanner>This is a banner!</ZBanner>
-    <ZButton>this is a my Button</ZButton>
+    <ZButton @click="test">this is a my Button</ZButton>
   </div>
 </template>
 
@@ -11,7 +11,12 @@ export default {
   name: "HelloWorld",
   props: {
     msg: String
-  }
+  },
+  methods: {
+    test () {
+      alert(123)
+    }
+  },
 };
 </script>
 

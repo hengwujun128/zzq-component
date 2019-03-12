@@ -2,19 +2,26 @@
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
     <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-    <ScrollTest></ScrollTest>
+    <!-- <ScrollTest></ScrollTest> -->
+    <sequentialTest></sequentialTest>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
+/* 
+这里主要测试 自定义的 component,directive,
+
+ */
+import HelloWorld from './components/HelloWorld.vue'
 import ScrollTest from "./components/scrollTest.vue";
+import sequentialTest from './components/sequentialTest';
 
 export default {
   name: "app",
   components: {
     // HelloWorld,
-    ScrollTest
+    // ScrollTest,
+    sequentialTest
   }
 };
 </script>

@@ -1,33 +1,37 @@
 /* eslint-disable */
 
-import Vue from "vue"
-import ZButton from "./Button.vue"
-import ZBanner from "./Banner.vue"
+// import Vue from "vue";
+import ZButton from "./Button.vue";
+import ZBanner from "./Banner.vue";
+
+// functional component
+import SequentialEntrance from "./sequential";
+import SequentialStyle from "./sequential/style.scss";
 
 // directive
-import ZScroll from "./directive/scroll.js"
-const Components = {
+import ZScroll from "./directive/scroll.js";
+
+export const Components = {
   ZBanner,
-  ZButton
-}
+  ZButton,
+  SequentialEntrance
+};
 
-// register globally in Vue 
-Object.keys(Components).forEach(name => {
-  Vue.component(name, Components[name])
-})
-
-const Directives = {
+export const Directives = {
   ZScroll
-}
-Object.keys(Directives).forEach(name => {
-  Vue.use(Directives[name])
-})
+};
 
-
-// register scopded in component
-export default Components
-// 暂不支持指令的自定义注入
-// export default {
-//   Components,
-//   Directives
-// }
+// export globally
+export default {
+  install(Vue, options) {
+    // register globally in Vue
+    Object.keys(Components).forEach(name => {
+      Vue.component(name, Components[name]);
+    });
+    // 指令
+    Object.keys(Directives).forEach(name => {
+      Vue.directive(name, Directives[name]);
+      // debugger;
+    });
+  }
+};

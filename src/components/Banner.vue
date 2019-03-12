@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-const defaultStyles = {
+const defaultStyles={
   left: 0,
   right: 0
 };
@@ -13,8 +13,8 @@ export default {
     position: {
       type: String,
       default: "top",
-      validator(position) {
-        return ["top", "bottom"].indexOf(position) > -1;
+      validator (position) {
+        return ["top","bottom"].indexOf(position)>-1;
       }
     },
     styles: {
@@ -22,7 +22,7 @@ export default {
       default: () => ({})
     }
   },
-  data() {
+  data () {
     return {
       bannerStyles: {
         ...defaultStyles,
