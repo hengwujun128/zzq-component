@@ -6,7 +6,7 @@
     "vue",
     "components"
   ],
-  "version": "0.1.6",
+  "version": "0.1.9",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
@@ -58,8 +58,6 @@
   "main": "./dist/zzq.umd.min.js",
   "files": [
     "dist/*",
-    "src/*",
-    "public/*",
     "*.json",
     "*.js"
   ]

@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 /*
 1.render 函数三个参数
 2.  标记组件为 functional，这意味它是无状态 (没有响应式数据:data)，无实例 (没有 this 上下文)。
