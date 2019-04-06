@@ -7,6 +7,7 @@ import ZBanner from "./Banner.vue";
 // functional component
 import SequentialEntrance from "./sequential";
 import SequentialStyle from "./sequential/style.scss";
+import InfiniteScroll from "./InfiniteScroll";
 
 // directive
 import ZScroll from "./directive/scroll.js";
@@ -14,7 +15,8 @@ import ZScroll from "./directive/scroll.js";
 export const Components = {
   ZBanner,
   ZButton,
-  SequentialEntrance
+  SequentialEntrance,
+  InfiniteScroll
 };
 
 export const Directives = {

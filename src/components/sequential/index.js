@@ -11,7 +11,7 @@
 
 props：提供所有 prop 的对象
 children: VNode 子节点的数组
-slots: 返回所有插槽的对象的函数
+slots: function returning a slots object
 scopedSlots: (2.6.0+) 一个暴露传入的作用域插槽以及函数形式的普通插槽的对象。
 data： 传递给组件的数据对象，作为 createElement 的第二个参数传入组件
 parent：对父组件的引用
@@ -23,15 +23,15 @@ export default {
    */
   functional: true,
   render(createElement, { props, data, children }) {
-    let delay = props.delay || 250;
-    // 定义函数组件的根元素
-    let tag = props.tag || "span";
-    let animation = props.animation || "entranceFromRight";
+    let delay = props.delay || 250
+    // 定义函数组件的根元素(容器组件)
+    let tag = props.tag || "span"
+    let animation = props.animation || "entranceFromRight"
 
-    if (props.fromTop != undefined) animation = "entranceFromTop";
-    if (props.fromRight != undefined) animation = "entranceFromRight";
-    if (props.fromBottom != undefined) animation = "entranceFromBottom";
-    if (props.fromLeft != undefined) animation = "entranceFromLeft";
+    if (props.fromTop != undefined) animation = "entranceFromTop"
+    if (props.fromRight != undefined) animation = "entranceFromRight"
+    if (props.fromBottom != undefined) animation = "entranceFromBottom"
+    if (props.fromLeft != undefined) animation = "entranceFromLeft"
 
     // children 为子组件:为每个子组件(item)添加staticStyle,添加staticClass 是固定写法
     if (children) {
@@ -39,14 +39,16 @@ export default {
         // 每个子组件animationDelay 是不同的延迟时间是不同的
         child.data.staticStyle = {
           opacity: 0,
+          // 在动画结束后，元素的样式设置为动画的最后一帧的样式
           animationFillMode: "forwards",
+          // 控制动画延迟播放
           animationDelay: index * delay + "ms"
-        };
+        }
         // 每个子组件的 class 是 扩写;而 style 不一样
-        child.data.staticClass += " " + animation;
-      });
+        child.data.staticClass += " " + animation
+      })
     }
     // 完全透明的传入任何特性、事件监听器、子结点等。
-    return createElement(tag, children);
+    return createElement(tag, children)
   }
-};
+}
