@@ -11,5 +11,16 @@ module.exports = {
       .use("url-loader")
       .loader("url-loader")
       .tap(options => Object.assign(options, { limit: 10240 }))
+    // custome
+    // {
+    //   loader: 'file-loader',
+    //   options: {},
+    // }
+    // .rule("js")
+    // .use("file-loader")
+    // .loader("file-loader")
+    // .tap(options => {
+    //   return Object.assign(options, { publicPath: "www.google.com" })
+    // })
   }
 }
