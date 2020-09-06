@@ -15,15 +15,15 @@ export default {
     position: {
       type: String,
       default: 'top'
-    },
+    }
   },
-  data () {
+  data() {
     return {
       common: 'common'
     }
   },
   computed: {
-    pos () {
+    pos() {
       return `position-${this.position}`
     }
   }

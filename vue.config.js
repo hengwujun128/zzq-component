@@ -10,7 +10,7 @@ module.exports = {
       .rule("images")
       .use("url-loader")
       .loader("url-loader")
-      .tap(options => Object.assign(options, { limit: 10240 }))
+      .tap(options => Object.assign(options, { limit: 10240 }));
     // custome
     // {
     //   loader: 'file-loader',
@@ -23,4 +23,4 @@ module.exports = {
     //   return Object.assign(options, { publicPath: "www.google.com" })
     // })
   }
-}
+};

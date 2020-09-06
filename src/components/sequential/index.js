@@ -33,8 +33,9 @@ export default {
     if (props.fromBottom != undefined) animation = "entranceFromBottom"
     if (props.fromLeft != undefined) animation = "entranceFromLeft"
 
-    // children 为子组件:为每个子组件(item)添加staticStyle,添加staticClass 是固定写法
+    // children 为虚拟 dom:为每个虚拟 dom(item)添加staticStyle,添加staticClass 是固定写法
     if (children) {
+      debugger
       children.forEach((child, index) => {
         // 每个子组件animationDelay 是不同的延迟时间是不同的
         child.data.staticStyle = {

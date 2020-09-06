@@ -1,5 +1,4 @@
 <script>
-
 /* 没有使用 template 的 vue 组件
   functional component 套路:
   1.要生成容器元素:createElement('div',data,children);this.$slots.default获取组件插槽内容
@@ -10,16 +9,19 @@
 export default {
   name: 'infinite-scroll',
   props: {
-    barStyle: Object,//主要是为容器组件设置样式
-    duration: {     // css动画持续时间
+    barStyle: Object, //主要是为容器组件设置样式
+    duration: {
+      // css动画持续时间
       type: String,
       default: '12s'
     },
-    direction: {      // css动画滚动方向
+    direction: {
+      // css动画滚动方向
       type: String,
       default: 'normal'
     },
-    delay: {          // css动画延迟时间
+    delay: {
+      // css动画延迟时间
       type: String,
       default: '0s'
     }
@@ -27,7 +29,7 @@ export default {
   computed: {
     // 对用户传入的属性进行扩展,可以使用Object.assign(this.barStyle,...)
     // 通过计算属性
-    customStyle () {
+    customStyle() {
       return {
         ...this.barStyle,
         'animation-duration': this.duration,
@@ -37,15 +39,21 @@ export default {
     }
   },
   methods: {
-    name () {
-
-    }
+    name() {}
   },
-  render (createElement) {
+  render(createElement) {
     // 获组件内容,并应用class
-    const bar=createElement('div',{ class: 'vifnslb-bar' },this.$slots.default)
+    const bar = createElement(
+      'div',
+      { class: 'vifnslb-bar' },
+      this.$slots.default
+    )
     // 生成组件容器,应用 class, style,并能够把子组件添加到容器中
-    return createElement('div',{ class: ['vifnslb-container'],style: this.customStyle },[bar,bar])
+    return createElement(
+      'div',
+      { class: ['vifnslb-container'], style: this.customStyle },
+      [bar, bar]
+    )
   }
 }
 </script>
