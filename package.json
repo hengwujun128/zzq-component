@@ -19,17 +19,23 @@
   ],
   "dependencies": {
     "lodash": "^4.17.11",
-    "vue": "^2.5.17"
+    "nprogress": "^0.2.0",
+    "vue": "^2.5.17",
+    "vue-router": "^3.4.9"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.2.0",
     "@vue/cli-plugin-eslint": "^3.2.0",
     "@vue/cli-service": "^3.2.0",
     "babel-eslint": "^10.0.1",
-    "eslint": "^5.8.0",
+    "eslint": "^7.18.0",
     "eslint-config-prettier": "^4.2.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-vue": "^5.0.0-0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-vue": "^7.5.0",
     "node-sass": "^4.11.0",
     "prettier-eslint-cli": "^4.7.1",
     "sass-loader": "^7.1.0",

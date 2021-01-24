@@ -35,12 +35,19 @@ const Plugin = {
         Plugin.dynamicContainer = dynamicContainer
       },
 
-      // 第一个参数 modal 是个字符串，对应模板中 modal element 的name 属性值; 一个模板字符串也可以；或者是个组件component
+      // 第一个参数 modal 是个 名称字符串，对应模板中 modal element 的name 属性值; 一个模板字符串也可以；或者是个组件component
       // 第二个参数paramsOrProps 是附加参数对象,能够在 modal element（modal 组件） 上的事件接收,也可以作为modal element 的props
       // 第三个params是modal参数，
       // 第四个参数是modal event listeners
 
       // Dynamic Modals
+
+      /*
+       *
+       * @param {string} name modal名称()
+       * @param {object} paramsOrProps
+       * @param {object} params
+       * */
       show(modal, paramsOrProps, params, events = {}) {
         if (typeof modal === 'string') {
           // 第三个参数是show or hide boolean
@@ -87,7 +94,7 @@ const Plugin = {
      *
      */
     if (options.dynamic) {
-      Vue.component('modals-container', ModalsContainer)
+      Vue.component('v-modals-container', ModalsContainer)
     }
   },
 }

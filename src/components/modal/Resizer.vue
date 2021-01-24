@@ -6,7 +6,7 @@ import { inRange } from './util'
 
 //
 export default {
-  name: 'VueJsModalResizer',
+  name: 'Resizer',
   props: {
     minHeight: {
       type: Number,
@@ -60,14 +60,15 @@ export default {
     // move 事件处理程序
     resize(event) {
       var el = this.$el.parentElement
-
+      // el: div.v--modal-box.v--modal
+      // 计算 modal 的 宽(用鼠标点位置 - offset)
       if (el) {
         var width = event.clientX - el.offsetLeft
         var height = event.clientY - el.offsetTop
-
+        // window.innerWidth 是 window 的宽
         width = inRange(this.minWidth, window.innerWidth, width)
         height = inRange(this.minHeight, window.innerHeight, height)
-
+        // 这里直接改变了 style
         this.size = { width, height }
         el.style.width = width + 'px'
         el.style.height = height + 'px'

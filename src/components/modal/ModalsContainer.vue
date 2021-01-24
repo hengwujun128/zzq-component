@@ -1,23 +1,25 @@
 <template>
   <div id="modals-container">
     <!-- modal 为全局组件，直接可以使用 -->
-    <modal
+    <ZModal
       v-for="modal in modals"
       :key="modal.id"
       v-bind="modal.config"
       v-on="modal.events"
       @closed="remove(modal.id)"
     >
+      <!--  在 modal 中使用动态组件-->
       <component
         :is="modal.component"
         v-bind="modal.params"
         @close="$modal.hide(modal.config.name)"
       />
-    </modal>
+    </ZModal>
   </div>
 </template>
 <script>
 export default {
+  name: 'ModalsContainer',
   data() {
     return {
       uid: 0,
@@ -27,6 +29,7 @@ export default {
   created() {
     this.$modal._setDynamicContainer(this)
   },
+  mounted() {},
   methods: {
     add(modal, params, config, events) {
       const id = this.uid++

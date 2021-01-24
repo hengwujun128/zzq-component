@@ -1,5 +1,5 @@
 <template>
-  <modal
+  <ZModal
     :classes="['v--modal', 'vue-dialog', this.params.class]"
     :width="width"
     :pivot-y="0.3"
@@ -35,11 +35,11 @@
       </button>
     </div>
     <div v-else class="vue-dialog-buttons-none" />
-  </modal>
+  </ZModal>
 </template>
 <script>
 export default {
-  name: 'VueJsDialog',
+  name: 'v-dialog',
   props: {
     width: {
       type: [Number, String],
@@ -77,7 +77,7 @@ export default {
   methods: {
     beforeOpened(event) {
       window.addEventListener('keyup', this.onKeyUp)
-
+      debugger
       this.params = event.params || {}
       this.$emit('before-opened', event)
     },
