@@ -8,6 +8,7 @@ import HelloWorld from '@/views/Swiper/HelloWorld'
 
 
 import Grid from './grid';
+import Directive from './directive';
 Vue.use(Router)
 
 let app_router = new Router({
@@ -23,7 +24,8 @@ let app_router = new Router({
       name: 'Instruction',
       component:()=> import(/* webpackChunkname:'instruction' */ '../views/Instruction.vue')
     },
-    ...Grid
+    ...Grid,
+    ...Directive
   ]
 })
 NProgress.configure({

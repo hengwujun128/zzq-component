@@ -14,6 +14,11 @@ const gridRoutes = [
     path: '/grid/secondGrid',
     name: 'SecondGrid',
     component: ()=> import(/* webpackChunkName: GridBasic */ '../views/Grid/SecondGrid.vue')
+  },
+  {
+    path: '/grid/thirdGrid',
+    name: 'ThirdGrid',
+    component: ()=> import(/* webpackChunkName: GridBasic */ '../views/Grid/ThirdGrid.vue')
   }
 ]
 
