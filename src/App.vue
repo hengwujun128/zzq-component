@@ -28,23 +28,23 @@
 这里主要测试 自定义的 component,directive,
 
  */
-import ScrollTest from "./views/scrollTest.vue"
-import sequentialTest from "./views/sequentialTest"
+import ScrollTest from './views/scrollTest.vue'
+import sequentialTest from './views/sequentialTest'
 // import moduleName from ""
 
 export default {
-  name: "app",
+  name: 'app',
   components: {
     ScrollTest,
     sequentialTest
   },
-  mounted() {
+  mounted () {
     console.log(process.env.VUE_APP_SECRET)
   },
   methods: {
-    name() {},
-    showModal() {
-      this.$modal.show('my-first-modal', {});
+    name () {},
+    showModal () {
+      this.$modal.show('my-first-modal', {})
       /*
        * dynamic modal
        * */
@@ -55,42 +55,44 @@ export default {
       //     {}
       // )
     },
-    showDialog() {
+    showDialog () {
       this.$modal.show('dialog', {
         title: 'Alert!',
         text: 'You are too awesome',
         buttons: [{
-            title: 'Deal with it',
-            handler: () => {
-              alert('Woot!')
-            }
-          },
-          {
-            title: '123', // Button title
-            default: true, // Will be triggered by default if 'Enter' pressed.
-            handler: () => {} // Button click handler
-          },
-          {
-            title: 'Close'
+          title: 'Deal with it',
+          handler: () => {
+            alert('Woot!')
           }
+        },
+        {
+          title: '123', // Button title
+          default: true, // Will be triggered by default if 'Enter' pressed.
+          handler: () => {} // Button click handler
+        },
+        {
+          title: 'Close'
+        }
         ]
       })
     },
-    hide() {
-      this.$modal.hide('my-first-modal');
+    hide () {
+      this.$modal.hide('my-first-modal')
     }
   }
 }
 </script>
 
 <style lang="scss" scoped>
+
 #app {
+  height:100%;
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  // margin-top: 60px;
 
   .buttonContainer {
     display: flex;

@@ -9,6 +9,9 @@ import HelloWorld from '@/views/Swiper/HelloWorld'
 
 import Grid from './grid';
 import Directive from './directive';
+import Scroll from './scroll';
+import Observers from './observer';
+
 Vue.use(Router)
 
 let app_router = new Router({
@@ -16,16 +19,20 @@ let app_router = new Router({
   routes: [
     {
       path: '/',
+      // redirect: '/scroll/scrollHeader',
+      redirect: '/observer/intersection',
       name: 'HelloWorld',
       component: HelloWorld,
     },
+    ...Grid,
+    ...Directive,
+    ...Scroll,
+    ...Observers,
     {
       path: '/instruction',
       name: 'Instruction',
       component:()=> import(/* webpackChunkname:'instruction' */ '../views/Instruction.vue')
     },
-    ...Grid,
-    ...Directive
   ]
 })
 NProgress.configure({

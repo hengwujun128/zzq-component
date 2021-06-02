@@ -5,7 +5,6 @@ import ZButton from "./Button.vue"
 import ZBanner from "./Banner.vue"
 
 
-
 // functional component
 import SequentialEntrance from "./sequential"
 import SequentialStyle from "./sequential/style.scss"

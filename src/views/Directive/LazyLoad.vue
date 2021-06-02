@@ -10,30 +10,29 @@
 </template>
 
 <script>
-import Axios from "axios"
+import Axios from 'axios'
 
-  export default {
-    data() {
-      return {
-        message: '',
-        images: []
-      }
-    },
-    mounted () {
-      this.getImageData();
-    },
-    methods: {
-      getImageData() {
-        let url = 'https://fullstar.zhhainiao.com/inst/promotion_mobile/kwp/get'
-        Axios.post(url,{"pid":12,"cn":910012,"kid":17063}).then(res=>{
-          console.log(res)
-          this.images = res.data.screen2_wallpapers
-        }).catch(error=>{
-
-        })
-      }
-    },
+export default {
+  data () {
+    return {
+      message: '',
+      images: []
+    }
+  },
+  mounted () {
+    this.getImageData()
+  },
+  methods: {
+    getImageData () {
+      const url = 'https://fullstar.zhhainiao.com/inst/promotion_mobile/kwp/get'
+      Axios.post(url, { pid: 12, cn: 910012, kid: 17063 }).then(res => {
+        console.log(res)
+        this.images = res.data.screen2_wallpapers
+      }).catch(error => {
+      })
+    }
   }
+}
 </script>
 
 <style lang="scss" scoped>
