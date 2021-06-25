@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Axios from 'axios'
+import axios from 'axios'
 
 export default {
   data () {
@@ -25,10 +25,11 @@ export default {
   methods: {
     getImageData () {
       const url = 'https://fullstar.zhhainiao.com/inst/promotion_mobile/kwp/get'
-      Axios.post(url, { pid: 12, cn: 910012, kid: 17063 }).then(res => {
+      axios.post(url, { pid: 12, cn: 910012, kid: 17063 }).then(res => {
         console.log(res)
         this.images = res.data.screen2_wallpapers
       }).catch(error => {
+        console.log(error)
       })
     }
   }

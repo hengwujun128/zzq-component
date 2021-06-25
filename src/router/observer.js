@@ -12,6 +12,13 @@ const observers = [
     component: () => {
       return import(/* webpackChunkName: 'ScrollHeader' */ '@/views/Observer/ScrollLoadMore.vue')
     }
+  },
+  {
+    path: '/observer/virtualScroll',
+    name: 'VirtualScroll',
+    component: () => {
+      return import(/* webpackChunkName: 'VirtualScroll' */ '@/views/Observer/VirtualScroll.vue')
+    }
   }
 ]
 
