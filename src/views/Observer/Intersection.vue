@@ -11,6 +11,9 @@
     </router-link>
     <h4>兴趣埋点</h4>
     <h4>控制动画/视频 执行</h4>
+    <router-link :to="{path: '/animation/flyBall'}">
+      <h4>飞入动画</h4>
+    </router-link>
   </div>
 </template>
 

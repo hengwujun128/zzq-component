@@ -11,6 +11,7 @@ import Grid from './grid';
 import Directive from './directive';
 import Scroll from './scroll';
 import Observers from './observer';
+import Animation from './animation';
 
 Vue.use(Router)
 
@@ -28,6 +29,7 @@ let app_router = new Router({
     ...Directive,
     ...Scroll,
     ...Observers,
+    ...Animation,
     {
       path: '/instruction',
       name: 'Instruction',
